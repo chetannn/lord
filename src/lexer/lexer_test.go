@@ -37,8 +37,8 @@ func TestNextTokenWithBasicStatements(t *testing.T) {
         input := `let five = 5;
          let ten = 10;
 
-         let add = fn(x,y) {
-             x + y;
+         let add = fn(x, y) {
+            x + y;
          };
 
          let result = add(five, ten);
@@ -64,10 +64,13 @@ func TestNextTokenWithBasicStatements(t *testing.T) {
         { token.FUNCTION, "fn" },
         { token.LPAREN, "(" },
         { token.IDENT, "x" },
-        { token.PLUS, "+" },
+        { token.COMMA, "," },
         { token.IDENT, "y" },
         { token.RPAREN, ")" },
         { token.LBRACE, "{" },
+        { token.IDENT, "x" },
+        { token.PLUS, "+" },
+        { token.IDENT, "y" },
         { token.SEMICOLON, ";" },
         { token.RBRACE, "}" },
         { token.SEMICOLON, ";" },
